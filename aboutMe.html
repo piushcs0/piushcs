@@ -12,9 +12,9 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>About Me</title>
-<link name="viewport" content="width=device-width ,intial-scale=1000">
+<link name="viewport" content="width=device-width ,intial-scale=1.0">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
+
 
 <style>
 	body{
@@ -46,19 +46,80 @@
 	}
 
 	.myImg{
-		margin-left: 20px;
+		margin-right: 50px;
 		margin-top: 5;
 		border-radius: 70px;
  		border: 5px solid rgb(172, 189, 23);
 	}
+	
 
+	
+	.overlay {
+	  	height: 100%;
+  		width: 0;
+  		position: fixed;
+  		z-index: 1;
+  		top: 0;
+  		left: 0;
+  		background-color: rgb(0,0,0);
+  		background-color: rgba(0,0,0, 0.9);
+  		overflow-x: hidden;
+  		transition: 0.5s;
+	}
+
+	.overlay-content {
+  		position: relative;
+  		top: 25%;
+  		width: 80%;
+  		margin-top: 30px;
+	}	
+
+	.overlay a {
+	  	padding: 8px;
+	  	text-decoration: none;
+  		font-size: 36px;
+  		transition: 0.3s;
+  		color:white;
+  		transition:0.8s all;
+	}
+
+	.overlay p a:hover {
+  		color: #f1f1f1;
+  		background-color:yellow;
+	}
+
+	.overlay .closebtn {
+  		position: absolute;
+  		top: 20px;
+  		right: 45px;
+  		font-size: 60px;
+	}
+
+	.barIcon{
+		color:white;
+	}
 
 </style>
-
+</head>
 <body>
-	<div class="navii">
-		<a href="navigationBar.html"><i class="fa fa-bars fa-3x"></i></a>
+	
+
+	<div id="myNav" class="overlay">
+			
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content">
+			<img class="myImg" src="pic.png" alt=" " align="right">
+			<p><a href="index.html">Home</a></p>
+			<p><a href="aboutMe.html">About Me</a></p>
+			<p><a href="myWork.html">My Work</a></p>
+			<p><a href="#">Resume</a></p>
+			<p><a href="contactMe.html">Contact Me</a></p>
+			
+		</div>
+		
 	</div>
+
+	<span class="barIcon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 	
 	<h1>
 		About <span>Me</span>
@@ -101,5 +162,15 @@
 		Also, a music Lover and a Cricket Enthusiast.
 	</p>
 -->
+
+<script>
+	function openNav() {
+	  document.getElementById("myNav").style.width = "100%";		
+	}
+		
+	function closeNav() {
+	  document.getElementById("myNav").style.width = "0%";
+	}
+</Script>
 </body>
 </html>
